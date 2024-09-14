@@ -10,4 +10,5 @@ class Post extends Model
     use HasFactory;
 
     protected $connection = 'mongodb';
+    protected $fillable = ['title', 'author', 'content'];
 }

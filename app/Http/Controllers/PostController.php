@@ -20,7 +20,7 @@ class PostController extends Controller
      */
     public function create()
     {
-        //
+        return view('postcreate');
     }
 
     /**
@@ -28,7 +28,12 @@ class PostController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $data = $request->all();
+        $post = new Post();
+        $post->fill($data);
+        $post->save();
+        return redirect('/posts');
+
     }
 
     /**
